@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework 50. Task 2</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/babel">
+      const app = document.getElementById('app');
+
+      const navbarMenuItems = [
+        { text: 'Home', url: '#' },
+        { text: 'Products', url: '#' },
+        { text: 'Features', url: '#' },
+        { text: 'Pricing', url: '#' },
+        { text: 'About', url: '#' },
+      ];
+
+      const navbarActionItems = [
+        { text: 'Login', classList: 'btn btn-outline-light' },
+        { text: 'Request callback', classList: 'btn btn-primary' },
+      ];
+
+      const articles = [
+        {
+          heading: 'Lorem',
+          text: `
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi atque expedita repellat at? Maxime libero quam voluptate unde facilis?
+                  Sequi voluptatibus, blanditiis ducimus, necessitatibus deleniti vero debitis sed quidem mollitia doloremque, tempora vitae aliquid obcaecati iure
+                  ipsa quas aliquam!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam consectetur ipsum voluptate accusantium, fugiat consequatur perspiciatis,
+                  mollitia at quia numquam dolorem ipsam provident aspernatur possimus. Obcaecati ratione et possimus reiciendis debitis libero non laborum ad modi
+                  nesciunt, tempora soluta quae id ipsum cupiditate minima rem aperiam praesentium eos velit unde labore qui sunt nulla? Aut, consequuntur
+                  similique! Impedit autem voluptatum blanditiis at totam corrupti beatae praesentium accusantium ipsum non, saepe ratione dolorem harum
+                  repellendus. Sequi necessitatibus vero cumque blanditiis eaque?
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloremque distinctio harum blanditiis quos, eius, iste quasi laudantium
+                  similique quod, natus beatae aspernatur! Maxime voluptatem commodi eaque hic nemo? Impedit doloremque labore cumque, voluptas, dolores, quisquam
+                  fuga totam esse optio incidunt aspernatur! Nesciunt, dolor ullam. Accusantium veritatis optio est quos repellat alias ducimus perspiciatis.
+                  Eligendi accusamus nihil quaerat ab temporibus quis ad! Ex odio culpa libero minima neque maiores, enim, delectus, corrupti laboriosam soluta quia
+                  mollitia! Harum vitae atque autem voluptate? Repellat, sint dolor? Alias corporis, quos vero iusto voluptas sapiente expedita tempore est dolorem
+                  repellat, vel id iure debitis corrupti blanditiis totam. Esse, beatae molestiae? Perspiciatis, doloribus eos sint eligendi, tempora modi a aperiam
+                  quia dolor debitis unde laborum?
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, itaque quasi? Voluptatem dolorem a quis aut sint unde eum laborum ipsa deleniti
+                  error est, esse veniam. Cumque explicabo expedita, voluptatem maiores, laboriosam, ex nesciunt voluptatibus quam dolores quidem necessitatibus
+                  voluptate atque blanditiis velit mollitia laborum quae suscipit sapiente. Nulla praesentium fuga aliquid iusto similique culpa voluptatum, dolore
+                  omnis distinctio recusandae.`,
+        },
+        {
+          heading: 'Ipsum',
+          text: `
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi atque expedita repellat at? Maxime libero quam voluptate unde facilis?
+                  Sequi voluptatibus, blanditiis ducimus, necessitatibus deleniti vero debitis sed quidem mollitia doloremque, tempora vitae aliquid obcaecati iure
+                  ipsa quas aliquam!
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloremque distinctio harum blanditiis quos, eius, iste quasi laudantium
+                  similique quod, natus beatae aspernatur! Maxime voluptatem commodi eaque hic nemo? Impedit doloremque labore cumque, voluptas, dolores, quisquam
+                  fuga totam esse optio incidunt aspernatur! Nesciunt, dolor ullam. Accusantium veritatis optio est quos repellat alias ducimus perspiciatis.
+                  Eligendi accusamus nihil quaerat ab temporibus quis ad! Ex odio culpa libero minima neque maiores, enim, delectus, corrupti laboriosam soluta quia
+                  mollitia! Harum vitae atque autem voluptate? Repellat, sint dolor? Alias corporis, quos vero iusto voluptas sapiente expedita tempore est dolorem
+                  repellat, vel id iure debitis corrupti blanditiis totam. Esse, beatae molestiae? Perspiciatis, doloribus eos sint eligendi, tempora modi a aperiam
+                  quia dolor debitis unde laborum?
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, itaque quasi? Voluptatem dolorem a quis aut sint unde eum laborum ipsa deleniti
+                  error est, esse veniam. Cumque explicabo expedita, voluptatem maiores, laboriosam, ex nesciunt voluptatibus quam dolores quidem necessitatibus
+                  voluptate atque blanditiis velit mollitia laborum quae suscipit sapiente. Nulla praesentium fuga aliquid iusto similique culpa voluptatum, dolore
+                  omnis distinctio recusandae.
+      `,
+        },
+        {
+          heading: 'Dolor',
+          text: `
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam consectetur ipsum voluptate accusantium, fugiat consequatur perspiciatis,
+                  mollitia at quia numquam dolorem ipsam provident aspernatur possimus. Obcaecati ratione et possimus reiciendis debitis libero non laborum ad modi
+                  nesciunt, tempora soluta quae id ipsum cupiditate minima rem aperiam praesentium eos velit unde labore qui sunt nulla? Aut, consequuntur
+                  similique! Impedit autem voluptatum blanditiis at totam corrupti beatae praesentium accusantium ipsum non, saepe ratione dolorem harum
+                  repellendus. Sequi necessitatibus vero cumque blanditiis eaque?
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloremque distinctio harum blanditiis quos, eius, iste quasi laudantium
+                  similique quod, natus beatae aspernatur! Maxime voluptatem commodi eaque hic nemo? Impedit doloremque labore cumque, voluptas, dolores, quisquam
+                  fuga totam esse optio incidunt aspernatur! Nesciunt, dolor ullam. Accusantium veritatis optio est quos repellat alias ducimus perspiciatis.
+                  Eligendi accusamus nihil quaerat ab temporibus quis ad! Ex odio culpa libero minima neque maiores, enim, delectus, corrupti laboriosam soluta quia
+                  mollitia! Harum vitae atque autem voluptate? Repellat, sint dolor? Alias corporis, quos vero iusto voluptas sapiente expedita tempore est dolorem
+                  repellat, vel id iure debitis corrupti blanditiis totam. Esse, beatae molestiae? Perspiciatis, doloribus eos sint eligendi, tempora modi a aperiam
+                  quia dolor debitis unde laborum?
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, itaque quasi? Voluptatem dolorem a quis aut sint unde eum laborum ipsa deleniti
+                  error est, esse veniam. Cumque explicabo expedita, voluptatem maiores, laboriosam, ex nesciunt voluptatibus quam dolores quidem necessitatibus
+                  voluptate atque blanditiis velit mollitia laborum quae suscipit sapiente. Nulla praesentium fuga aliquid iusto similique culpa voluptatum, dolore
+                  omnis distinctio recusandae.`,
+        },
+        {
+          heading: 'Sit',
+          text: `
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam consectetur ipsum voluptate accusantium, fugiat consequatur perspiciatis,
+                  mollitia at quia numquam dolorem ipsam provident aspernatur possimus. Obcaecati ratione et possimus reiciendis debitis libero non laborum ad modi
+                  nesciunt, tempora soluta quae id ipsum cupiditate minima rem aperiam praesentium eos velit unde labore qui sunt nulla? Aut, consequuntur
+                  similique! Impedit autem voluptatum blanditiis at totam corrupti beatae praesentium accusantium ipsum non, saepe ratione dolorem harum
+                  repellendus. Sequi necessitatibus vero cumque blanditiis eaque?
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloremque distinctio harum blanditiis quos, eius, iste quasi laudantium
+                  similique quod, natus beatae aspernatur! Maxime voluptatem commodi eaque hic nemo? Impedit doloremque labore cumque, voluptas, dolores, quisquam
+                  fuga totam esse optio incidunt aspernatur! Nesciunt, dolor ullam. Accusantium veritatis optio est quos repellat alias ducimus perspiciatis.
+                  Eligendi accusamus nihil quaerat ab temporibus quis ad! Ex odio culpa libero minima neque maiores, enim, delectus, corrupti laboriosam soluta quia
+                  mollitia! Harum vitae atque autem voluptate? Repellat, sint dolor? Alias corporis, quos vero iusto voluptas sapiente expedita tempore est dolorem
+                  repellat, vel id iure debitis corrupti blanditiis totam. Esse, beatae molestiae? Perspiciatis, doloribus eos sint eligendi, tempora modi a aperiam
+                  quia dolor debitis unde laborum?
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, itaque quasi? Voluptatem dolorem a quis aut sint unde eum laborum ipsa deleniti
+                  error est, esse veniam. Cumque explicabo expedita, voluptatem maiores, laboriosam, ex nesciunt voluptatibus quam dolores quidem necessitatibus
+                  voluptate atque blanditiis velit mollitia laborum quae suscipit sapiente. Nulla praesentium fuga aliquid iusto similique culpa voluptatum, dolore
+                  omnis distinctio recusandae.`,
+        },
+        {
+          heading: 'Amet',
+          text: `
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam consectetur ipsum voluptate accusantium, fugiat consequatur perspiciatis,
+                  mollitia at quia numquam dolorem ipsam provident aspernatur possimus. Obcaecati ratione et possimus reiciendis debitis libero non laborum ad modi
+                  nesciunt, tempora soluta quae id ipsum cupiditate minima rem aperiam praesentium eos velit unde labore qui sunt nulla? Aut, consequuntur
+                  similique! Impedit autem voluptatum blanditiis at totam corrupti beatae praesentium accusantium ipsum non, saepe ratione dolorem harum
+                  repellendus. Sequi necessitatibus vero cumque blanditiis eaque?
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloremque distinctio harum blanditiis quos, eius, iste quasi laudantium
+                  similique quod, natus beatae aspernatur! Maxime voluptatem commodi eaque hic nemo? Impedit doloremque labore cumque, voluptas, dolores, quisquam
+                  fuga totam esse optio incidunt aspernatur! Nesciunt, dolor ullam. Accusantium veritatis optio est quos repellat alias ducimus perspiciatis.
+                  Eligendi accusamus nihil quaerat ab temporibus quis ad! Ex odio culpa libero minima neque maiores, enim, delectus, corrupti laboriosam soluta quia
+                  mollitia! Harum vitae atque autem voluptate? Repellat, sint dolor? Alias corporis, quos vero iusto voluptas sapiente expedita tempore est dolorem
+                  repellat, vel id iure debitis corrupti blanditiis totam. Esse, beatae molestiae? Perspiciatis, doloribus eos sint eligendi, tempora modi a aperiam
+                  quia dolor debitis unde laborum?
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia, itaque quasi? Voluptatem dolorem a quis aut sint unde eum laborum ipsa deleniti
+                  error est, esse veniam. Cumque explicabo expedita, voluptatem maiores, laboriosam, ex nesciunt voluptatibus quam dolores quidem necessitatibus
+                  voluptate atque blanditiis velit mollitia laborum quae suscipit sapiente. Nulla praesentium fuga aliquid iusto similique culpa voluptatum, dolore
+                  omnis distinctio recusandae.`,
+        },
+      ];
+
+      const Logo = ({ imgSrc, alt }) => {
+        return (
+          <a href='#'>
+            <img src={imgSrc} alt={alt} />
+          </a>
+        );
+      };
+
+      const NavBarMenuItem = ({ text, url }) => {
+        return (
+          <li className='nav-item'>
+            <a href={url} className='nav-link text-white'>
+              {text}
+            </a>
+          </li>
+        );
+      };
+
+      const NavBarActionItem = ({ text, classList }) => {
+        return (
+          <button type='button' className={classList}>
+            {text}
+          </button>
+        );
+      };
+
+      const NavBarMenu = ({ items }) => {
+        return (
+          <ul className='nav gap-2 justify-content-center me-lg-auto'>
+            {items.map(({ text, url }, index) => (
+              <NavBarMenuItem text={text} url={url} key={index} />
+            ))}
+          </ul>
+        );
+      };
+
+      const NavBarActions = ({ items }) => {
+        return (
+          <div className='text-end d-flex gap-2'>
+            {items.map(({ text, classList }, index) => (
+              <NavBarActionItem text={text} classList={classList} key={index} />
+            ))}
+          </div>
+        );
+      };
+
+      const Header = () => {
+        return (
+          <header className='bg-dark text-white py-2'>
+            <div className='container'>
+              <div className='d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start'>
+                <Logo imgSrc='images/logo.svg' alt='Product' />
+                <NavBarMenu items={navbarMenuItems} />
+                <NavBarActions items={navbarActionItems} />
+              </div>
+            </div>
+          </header>
+        );
+      };
+
+      const SidenavItem = ({ heading, id }) => {
+        return (
+          <li>
+            <a href={'#list-item-' + id} className='list-group-item list-group-item-action'>
+              {heading}
+            </a>
+          </li>
+        );
+      };
+
+      const ContentItem = ({ heading, text, id }) => {
+        return (
+          <div>
+            <h3 id={'list-item-' + id}>{heading}</h3>
+            <div>{text}</div>
+          </div>
+        );
+      };
+
+      const Sidenav = ({ items }) => {
+        return (
+          <div id='sidenav' className='col-3 d-flex flex-column flex-shrink-0 bg-light'>
+            <ul className='nav col-2 flex-column mb-auto list-group position-fixed'>
+              {items.map(({ heading }, index) => (
+                <SidenavItem heading={heading} id={index} key={index} />
+              ))}
+            </ul>
+          </div>
+        );
+      };
+
+      const Content = ({ items }) => {
+        return (
+          <div data-bs-spy='scroll' data-bs-target='#sidenav' data-bs-offset='0' className='col'>
+            {items.map(({ heading, text }, index) => (
+              <ContentItem heading={heading} text={text} id={index} key={index} />
+            ))}
+          </div>
+        );
+      };
+
+      const Main = () => {
+        return (
+          <main className='bg-light'>
+            <div className='container py-3'>
+              <div className='row'>
+                <Sidenav items={articles} />
+                <Content items={articles} />
+              </div>
+            </div>
+          </main>
+        );
+      };
+
+      const Footer = () => {
+        return (
+          <footer className='d-flex flex-wrap justify-content-center align-items-center py-2 bg-dark text-white'>
+            <div className='container'>
+              <div>
+                <span>© 2024 Product Production</span>
+              </div>
+            </div>
+          </footer>
+        );
+      };
+
+      const page = (
+        <div>
+          <Header />
+          <Main />
+          <Footer />
+        </div>
+      );
+
+      ReactDOM.createRoot(app).render(page);
+    </script>
+  </body>
+</html>
